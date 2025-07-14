@@ -20,7 +20,7 @@ https://configs.ipvanish.com/configs/configs.zip
 ..
 ├── vpn-config.sh               # VPN configuration used by multi-vpn.sh and vpn-terminal.sh
 ├── vpn-terminal.sh             # Standalone interactive terminal, also runs scripts as parameter
-├── test-creds.ps1              # Authenticate as M365 user using ExchangeOnlineManagement
+├── test-creds.ps1              # Test a set of credentials (username/password)
 ├── test-all-vpns.sh            # Runs .ps1 script provided as parameter on all VPNs
 ├── test-users-distributed.sh   # Test x number of users in wordlist per VPN
 ├── test-users-vpn-cycle.sh     # Cycle through users in worlist, 1 try per VPN
