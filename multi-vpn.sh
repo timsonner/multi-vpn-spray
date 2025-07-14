@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # Script to manage multiple OpenVPN connections with different tun interfaces
-# Usage: ./multi-vpn.sh start|stop|status
+# Usage: ./multi_vpn.sh start|stop|status
 
-VPN_DIR="/home/user/Desktop/openvpn-test-creds/configs/"
+# Get the directory where this script is located
+VPN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_DIR="/tmp/vpn_logs"
 PID_DIR="/tmp/vpn_pids"
 
-# Create temp directories if they don't exist
+# Create directories if they don't exist
 mkdir -p "$LOG_DIR" "$PID_DIR"
 
 # Define VPN configurations
@@ -28,7 +29,7 @@ start_vpn() {
     
     echo "Starting VPN on tun$tun_id with config: $config_file"
     
-    # Create modified config file with specific tun device
+    # Create a modified config file with specific tun device
     local temp_config="/tmp/vpn_tun${tun_id}.ovpn"
     cp "$VPN_DIR/$config_file" "$temp_config"
     
