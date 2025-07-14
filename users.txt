@@ -1,0 +1,8 @@
+user1@contoso.com
+admin@contoso.com
+ap@contoso.com
+user2@contoso.com
+test@contoso.com
+manager@contoso.com
+support@contoso.com
+dev@contoso.com
