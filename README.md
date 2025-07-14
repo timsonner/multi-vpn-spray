@@ -1,5 +1,5 @@
 # Multi VPN password spray
-Objective: Connect to several VPN tunnels, then attach shells to tunnels to demonstrate password spray from multiple IPs
+Objective: Connect to several VPN tunnels, then attach shells to tunnels to demonstrate password spray from multiple IPs  
 This testing is done with IPVanish, YMMV with other .ovpn configs
 
 ## Preject setup  
