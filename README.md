@@ -8,6 +8,19 @@ https://configs.ipvanish.com/configs/configs.zip
 
 - Extract configs, place fix-configs.sh in configs directory and run it
 - Place multi-vpn.sh in configs directory
+- Create auth.txt with username and password each on oneline in configs directory
+- Place vpn-config.sh in same directory as vpn-terminal.sh
+
+## Project structure  
+```
+..
+├── vpn-config.sh           # Shared VPN configurations
+├── vpn-terminal.sh         # Terminal script (sources vpn-config.sh)
+└── configs/
+    ├── fix-configs.sh      # Removes keysize and adds path to auth.txt
+    ├── auth.txt            # Username and password for VPN
+    └── multi-vpn.sh        # VPN management script (sources ../vpn-config.sh)
+```
 
 ## Start up multiple VPNs
 ```bash
