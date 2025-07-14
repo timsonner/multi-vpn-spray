@@ -7,7 +7,8 @@
 #   ./vpn-terminal.sh 1 curl ipinfo.io  # Run curl through tun1
 #   ./vpn-terminal.sh 2 "ping google.com"  # Run ping through tun2
 
-VPN_DIR="/home/user/Desktop/openvpn-test-creds/IPV"
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Color codes for output
 RED='\033[0;31m'
@@ -16,12 +17,14 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# VPN configurations (must match multi-vpn.sh)
-declare -A VPN_CONFIGS
-VPN_CONFIGS[0]="ipvanish-US-New-York-nyc-a01.ovpn"
-VPN_CONFIGS[1]="ipvanish-US-Los-Angeles-lax-b01.ovpn" 
-VPN_CONFIGS[2]="ipvanish-UK-London-lon-a01.ovpn"
-VPN_CONFIGS[3]="ipvanish-DE-Frankfurt-fra-a01.ovpn"
+# Source shared VPN configuration
+CONFIG_FILE="$SCRIPT_DIR/vpn-config.sh"
+if [ -f "$CONFIG_FILE" ]; then
+    source "$CONFIG_FILE"
+else
+    echo "Error: VPN configuration file not found at $CONFIG_FILE"
+    exit 1
+fi
 
 show_usage() {
     echo -e "${BLUE}VPN Terminal - Route traffic through specific VPN tunnel${NC}"
