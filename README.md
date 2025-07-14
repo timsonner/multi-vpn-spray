@@ -1,4 +1,4 @@
-# Multi VPN password spray/brute force
+# Multi VPN password spray
 Objective: Connect to several VPN tunnels, attach shells to tunnels. Demonstrate password spray or brute force from multiple IPs  
 The configs used in testing are from IPVanish, YMMV with other .ovpn configs
 
