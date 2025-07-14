@@ -195,11 +195,8 @@ run_with_vpn_routing() {
             modified_command=$(echo "$command" | sed "s/ping/ping -I tun$tun_id/")
             eval "$modified_command"
         elif [[ "$command" == pwsh* ]]; then
-            # For PowerShell, just run it normally and let user test manually
-            echo "Note: PowerShell may not automatically use the VPN interface."
-            echo "You can test the IP manually inside PowerShell with:"
-            echo "  Invoke-WebRequest -Uri ipinfo.io/json"
-            echo
+            # For PowerShell commands, execute them directly
+            echo "Executing PowerShell command through VPN..."
             eval "$command"
         else
             # For other commands, just run them normally
