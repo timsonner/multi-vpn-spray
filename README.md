@@ -1,15 +1,15 @@
-# Multi VPN password spray
-Objective: Connect to several VPN tunnels, then attach shells to tunnels to demonstrate password spray from multiple IPs  
-This testing is done with IPVanish, YMMV with other .ovpn configs
+# Multi VPN password spray/brute force
+Objective: Connect to several VPN tunnels, attach shells to tunnels. Demonstrate password spray or brute force from multiple IPs  
+The configs used in testing are from IPVanish, YMMV with other .ovpn configs
 
 ## Preject setup  
 - Download the configs
 https://configs.ipvanish.com/configs/configs.zip
-
 - Extract configs, place fix-configs.sh in configs directory and run it
-- Place multi-vpn.sh in configs directory
-- Create auth.txt with username and password each on oneline in configs directory
-- Place vpn-config.sh in same directory as vpn-terminal.sh
+- Install PowerShell
+- Install PowerShell module EchangeOnlineManagement
+- Edit vpn-config.sh with VPNs you want to use
+- Edit test-creds with credentials of user
 
 ## Project structure  
 ```
@@ -29,7 +29,7 @@ https://configs.ipvanish.com/configs/configs.zip
 cd configs && ./multi-vpn.sh
 ```
 
-## Run VPN terminal  
+## Run VPN terminal standalone
 ```bash
 vpn-terminal.sh
 ```
