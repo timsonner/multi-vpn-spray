@@ -11,12 +11,14 @@ PID_DIR="/tmp/vpn_pids"
 # Create directories if they don't exist
 mkdir -p "$LOG_DIR" "$PID_DIR"
 
-# Define VPN configurations
-declare -A VPN_CONFIGS
-VPN_CONFIGS[0]="ipvanish-US-New-York-nyc-a01.ovpn"
-VPN_CONFIGS[1]="ipvanish-US-Los-Angeles-lax-b01.ovpn" 
-VPN_CONFIGS[2]="ipvanish-UK-London-lon-a01.ovpn"
-VPN_CONFIGS[3]="ipvanish-DE-Frankfurt-fra-a01.ovpn"
+# Source shared VPN configuration
+CONFIG_FILE="$(dirname "$VPN_DIR")/vpn-config.sh"
+if [ -f "$CONFIG_FILE" ]; then
+    source "$CONFIG_FILE"
+else
+    echo "Error: VPN configuration file not found at $CONFIG_FILE"
+    exit 1
+fi
 
 start_vpn() {
     local tun_id=$1
