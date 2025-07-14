@@ -16,6 +16,8 @@ https://configs.ipvanish.com/configs/configs.zip
 ..
 ├── vpn-config.sh           # Shared VPN configurations
 ├── vpn-terminal.sh         # Terminal script (sources vpn-config.sh)
+├── test-creds.ps1          # Authenticate as M365 user using ExchangeOnlineManagement
+├── test-all-vpns.sh        # Runs test-creds.ps1 on all VPNs
 └── configs/
     ├── fix-configs.sh      # Removes keysize and adds path to auth.txt
     ├── auth.txt            # Username and password for VPN
