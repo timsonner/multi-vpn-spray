@@ -42,7 +42,7 @@ cd configs && ./multi-vpn.sh
 vpn-terminal.sh
 ```
 
-## Test creds of single user (good for fail/success error messages and testing)
+## Test creds of single user (good for fail/success error messages and testing VPN connections)
 ```bash
 test-all-vpns.sh test-creds.ps1 
 ```
