@@ -1,0 +1,2 @@
+VPN_username_goes_here
+VPN_password_goes_here
